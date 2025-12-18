@@ -8,19 +8,22 @@
         <style>
                 body {
                         box-sizing: border-box;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
                 }
 
                 .main {
                         display: grid;
                         z-index: 1;
-                        width: 60vw;
+                        width: 45vw;
                         /* border: 1px solid black; */
                         grid-template-columns: repeat(6, 7vw);
                         grid-template-rows: repeat(5, 7vw);
                         column-gap: 8px;
                         row-gap: 8px;
-                        margin: auto;
-                        padding: 6vw;
+                        /* margin: auto; */
+                        /* padding: 6vw; */
                 }
 
                 .background_none {
@@ -36,7 +39,23 @@
                         display: flex;
                         justify-content: center;
                         align-items: center;
+                        /* background-color: rgba(229, 205, 22, 0.989); */
+                }
+
+                .closed {
                         background-color: rgba(229, 205, 22, 0.989);
+                }
+
+                .pic1 {
+                        /* width: 100px; */
+                        /* height: 100px; */
+                        border: 2px solid #ccc;
+                        border-radius: 10px;
+                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        /* background-color: rgba(229, 205, 22, 0.989); */
                 }
 
                 .pic:hover {
@@ -61,123 +80,98 @@
                         z-index: -1;
                 }
 
-                .png1 {
+                .opened {
+                        background-color: initial;
+                }
 
-                        height: auto;
-                        max-width: 6vw;
-                        border: 2px solid #ccc;
-                        border-radius: 10px;
-                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-                        object-fit: cover;
-                        display: block;
-                        margin: 20px auto;
-                        filter: grayscale(50%);
-                        opacity: 0.9;
-                        cursor: pointer;
-                        z-index: 1;
+                .opened:hover {
+                        background-color: initial;
+                }
+
+                .game-title {
+                        font-family: 'Poppins', 'Segoe UI', sans-serif;
+                        font-size: 3rem;
+                        font-weight: 700;
+                        text-align: center;
+                        letter-spacing: 2px;
+                        margin: 20px 0 30px;
+                        color: #ffffff;
+
+                        /* Fun gradient text */
+                        background: linear-gradient(90deg, #ff6a00, #ffb347, #00c6ff);
+                        background-clip: text;
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+
+                        /* Subtle glow */
+                        text-shadow: 0 4px 15px rgba(255, 150, 50, 0.4);
+                }
+
+                .game-title {
+                        animation: float 3s ease-in-out infinite;
+                }
+
+                @keyframes float {
+                        0% {
+                                transform: translateY(0);
+                        }
+
+                        50% {
+                                transform: translateY(-6px);
+                        }
+
+                        100% {
+                                transform: translateY(0);
+                        }
+                }
+
+                .ScoreCard {
+                        display: flex;
+                        align-items: center;
+                        gap: 100px;
                 }
         </style>
 </head>
 
 <body>
+        <h1 class="game-title">Memory Match</h1>
+        <div class="ScoreCard">
+                <h1 class="score">Score: &nbsp;0</h1>
+                <h1 class="cardsFlipped">Cards Flipped: &nbsp;0</h1>
+
+        </div>
+
         <div class="main">
-                <div class="pic"><img
-                                src="png-transparent-paperback-vintage-books-knopf-doubleday-publishing-group-anchor-technic-logo-author-thumbnail.png"
-                                class="png" /></div>
-                <div class="pic"><img
-                                src="png-transparent-frying-pan-cookware-and-bakeware-silit-bread-frying-pan-glass-kitchen-white-thumbnail.png"
-                                class="png" /></div>
-                <div class="pic"><img
-                                src="png-transparent-passbook-mobile-app-google-play-android-application-software-book-horse-service-rectangle-thumbnail.png"
-                                class="png" /></div>
-                <div class="pic"><img
-                                src="png-transparent-grey-and-black-medieval-sword-the-lord-of-the-rings-aragorn-gandalf-arwen-sword-sword-free-texture-dagger-weapon-thumbnail.png"
-                                class="png" /></div>
-                <div class="pic"><img
-                                src="png-transparent-drill-tool-parafusadeira-hammer-hand-held-power-brick-angle-hand-hand-drawn-thumbnail.png"
-                                class="png" /></div>
-                <div class="pic"><img src="png-transparent-black-shovel-shovel-shovel-grey-cactus-product-thumbnail.png"
-                                class="png" /></div>
-
-                <div class="pic"><img src="png-transparent-bucket-plastic-bucket-free-texture-lid-sticker-thumbnail.png"
-                                class="png" /></div>
-                <div class="pic"><img
-                                src="png-transparent-object-layers-armchair-hd-angle-furniture-textile-thumbnail.png"
-                                class="png" />
-                </div>
-                <div class="pic"><img
-                                src="png-transparent-refrigerator-door-room-refrigerator-hd-kitchen-white-electronics-thumbnail.png"
-                                class="png" /></div>
-                <div class="pic"><img
-                                src="png-transparent-passbook-mobile-app-google-play-android-application-software-book-horse-service-rectangle-thumbnail.png"
-                                class="png" /></div>
-
-                <div class="pic"><img
-                                src="png-transparent-grey-and-black-medieval-sword-the-lord-of-the-rings-aragorn-gandalf-arwen-sword-sword-free-texture-dagger-weapon-thumbnail.png"
-                                class="png" /></div>
-                <div class="pic"><img
-                                src="png-transparent-paperback-vintage-books-knopf-doubleday-publishing-group-anchor-technic-logo-author-thumbnail.png"
-                                class="png" /></div>
-                <div class="pic"><img
-                                src="png-transparent-material-brass-random-buttons-material-brass-button-thumbnail.png"
-                                class="png" />
-                </div>
-                <div class="pic"><img src="png-transparent-black-shovel-shovel-shovel-grey-cactus-product-thumbnail.png"
-                                class="png" /></div>
-                <div class="pic"><img
-                                src="png-transparent-object-layers-armchair-hd-angle-furniture-textile-thumbnail.png"
-                                class="png" />
-                </div>
-                <div class="pic"><img
-                                src="png-transparent-knife-weapon-shuriken-obito-uchiha-kunai-knife-angle-manga-dagger-thumbnail.png"
-                                class="png" /></div>
-
-                <div class="pic"><img
-                                src="png-transparent-kettle-le-creuset-kitchen-stove-vitreous-enamel-kettle-kitchen-orange-lid-thumbnail.png"
-                                class="png" /></div>
-                <div class="pic"><img
-                                src="png-transparent-knife-weapon-shuriken-obito-uchiha-kunai-knife-angle-manga-dagger-thumbnail.png"
-                                class="png" /></div>
-                <div class="pic"><img
-                                src="png-transparent-drill-tool-parafusadeira-hammer-hand-held-power-brick-angle-hand-hand-drawn-thumbnail.png"
-                                class="png" /></div>
-                <div class="pic"><img
-                                src="png-transparent-frying-pan-cookware-and-bakeware-silit-bread-frying-pan-glass-kitchen-white-thumbnail.png"
-                                class="png" /></div>
-
-                <div class="pic"><img
-                                src="png-transparent-kettle-le-creuset-kitchen-stove-vitreous-enamel-kettle-kitchen-orange-lid-thumbnail.png"
-                                class="png" /></div>
-                <div class="pic"><img
-                                src="png-transparent-crumpled-papers-inside-trash-bin-waste-container-recycling-bin-paper-trash-can-steel-contrast-product-thumbnail.png"
-                                class="png" /></div>
-                <div class="pic"><img src="png-transparent-bucket-plastic-bucket-free-texture-lid-sticker-thumbnail.png"
-                                class="png" /></div>
-                <div class="pic"><img
-                                src="png-transparent-material-brass-random-buttons-material-brass-button-thumbnail.png"
-                                class="png" />
-                </div>
-
-                <div class="pic"><img
-                                src="png-transparent-bang-dream-girls-band-party-esp-guitars-esp-m-ii-electric-guitar-electric-guitar-angle-pickup-guitar-accessory-thumbnail.png"
-                                class="png" /></div>
-                <div class="pic"><img
-                                src="png-transparent-crumpled-papers-inside-trash-bin-waste-container-recycling-bin-paper-trash-can-steel-contrast-product-thumbnail.png"
-                                class="png" /></div>
-                <div class="pic"><img
-                                src="png-transparent-bang-dream-girls-band-party-esp-guitars-esp-m-ii-electric-guitar-electric-guitar-angle-pickup-guitar-accessory-thumbnail.png"
-                                class="png" /></div>
-                <div class="pic"><img
-                                src="png-transparent-refrigerator-door-room-refrigerator-hd-kitchen-white-electronics-thumbnail.png"
-                                class="png" /></div>
-
-                <div class="pic"><img
-                                src="png-transparent-ranged-weapon-episode-8-episode-11-granblue-fantasy-weapon-child-bow-prince-thumbnail.png"
-                                class="png" /></div>
-                <div class="pic"><img
-                                src="png-transparent-ranged-weapon-episode-8-episode-11-granblue-fantasy-weapon-child-bow-prince-thumbnail.png"
-                                class="png" /></div>
-
+                <div class="pic"></div>
+                <div class="pic"></div>
+                <div class="pic"></div>
+                <div class="pic"></div>
+                <div class="pic"></div>
+                <div class="pic"></div>
+                <div class="pic"></div>
+                <div class="pic"></div>
+                <div class="pic"></div>
+                <div class="pic"></div>
+                <div class="pic"></div>
+                <div class="pic"></div>
+                <div class="pic"></div>
+                <div class="pic"></div>
+                <div class="pic"></div>
+                <div class="pic"></div>
+                <div class="pic"></div>
+                <div class="pic"></div>
+                <div class="pic"></div>
+                <div class="pic"></div>
+                <div class="pic"></div>
+                <div class="pic"></div>
+                <div class="pic"></div>
+                <div class="pic"></div>
+                <div class="pic"></div>
+                <div class="pic"></div>
+                <div class="pic"></div>
+                <div class="pic"></div>
+                <div class="pic"></div>
+                <div class="pic"></div>
         </div>
         <script src="script.js"></script>
 </body>
